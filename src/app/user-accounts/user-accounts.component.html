@@ -1,0 +1,50 @@
+<div class="accounts-wrapper">
+  <div class="header">
+    <span>
+      <span class="avatar"></span
+      >{{
+        appService.loggedInUser.firstName +
+          " " +
+          appService.loggedInUser.lastName
+      }}</span
+    >
+
+    <div>
+      <button class="create-button" (click)="createClick()">
+        <span class="mask-add"></span> New Account
+      </button>
+    </div>
+    <div class="creation-form" *ngIf="showCreationForm">
+      <div class="fill">
+        <label>
+          <span> Initial Credit: </span>
+        </label>
+        <input
+          type="number"
+          class="initial-credit"
+          [(ngModel)]="initialCredit"
+        />
+      </div>
+      <div class="fill">
+        <label> Currency: </label>
+        <app-currency-dropdown
+          [currencySource]="appService.currencySource"
+          (onSelect)="selectCurrency($event)"
+        ></app-currency-dropdown>
+      </div>
+      <div class="fill">
+        <button class="create" (click)="onAccountCreation()">Create</button>
+      </div>
+    </div>
+  </div>
+  <div class="accounts">
+    <h1>Accounts</h1>
+    <app-user-account
+      *ngFor="
+        let account of userAccountsService.userAccounts$ | async;
+        let i = index
+      "
+      [account]="account"
+    ></app-user-account>
+  </div>
+</div>

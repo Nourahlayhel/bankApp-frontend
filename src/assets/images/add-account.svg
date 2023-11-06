@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <g id="Group_4903" data-name="Group 4903" transform="translate(-1636 -14)">
+    <path id="Icon_ionic-ios-add" data-name="Icon ionic-ios-add" d="M19.373,13.824H15.206V9.656a.691.691,0,1,0-1.382,0v4.168H9.656a.691.691,0,0,0,0,1.382h4.168v4.168a.691.691,0,1,0,1.382,0V15.206h4.168a.691.691,0,1,0,0-1.382Z" transform="translate(1641.484 19.486)"/>
+    <g id="Ellipse_635" data-name="Ellipse 635" transform="translate(1644 22)" fill="none" stroke="#000" stroke-width="1.5">
+      <circle cx="12" cy="12" r="12" stroke="none"/>
+      <circle cx="12" cy="12" r="11.25" fill="none"/>
+    </g>
+    <rect id="Rectangle_3204" data-name="Rectangle 3204" width="40" height="40" transform="translate(1636 14)" fill="none"/>
+  </g>
+</svg>

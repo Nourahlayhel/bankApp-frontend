@@ -1,0 +1,54 @@
+.transaction-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.new-transaction-form {
+  position: absolute;
+  height: 200px;
+  z-index: 1;
+  background-color: #35363a;
+  display: grid;
+  width: 280px;
+  color: white;
+  inset-inline-start: 290px;
+  padding: 9px;
+  top: 274px;
+  box-shadow: 4px;
+}
+.new-transaction {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.button-add {
+  background-color: transparent;
+  border: none;
+}
+.amount {
+  width: 180px;
+}
+.submit {
+  width: 80px;
+}
+.opt {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 70px;
+}
+select {
+  width: 130px;
+  font-size: 16px;
+  border-radius: 10px;
+}
+.mask-add {
+  mask: url("/assets/images/add-account.svg");
+  display: inline-block;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  height: 25px;
+  width: 28px;
+  background-color: white;
+}

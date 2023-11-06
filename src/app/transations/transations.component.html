@@ -1,0 +1,28 @@
+<div *ngFor="let t of transactions" class="transaction-wrapper">
+  <span> Made on {{ t.transactionDate | date }}</span>
+  <span> {{ t.transactionType === "Deposit" ? "+" : "-" }} {{ t.amount }}</span>
+</div>
+<div *ngIf="!transactions?.length">No transactions made on this account</div>
+<div class="new-transaction">
+  <span> Add new transaction on account</span>
+  <button class="button-add" (click)="toggleForm()">
+    <span class="mask-add"></span>
+  </button>
+</div>
+<div class="new-transaction-form" *ngIf="showTransactionForm">
+  <div class="opt">
+    <label>Amount</label><input type="number" [min]="0" [(ngModel)]="amount" />
+  </div>
+
+  <div class="opt">
+    <label>Type</label
+    ><select (change)="selectType($event)">
+      <ng-container *ngFor="let t of transactionTypes">
+        <option [value]="t.transactionTypeId" [title]="t.name">
+          {{ t.name }}
+        </option>
+      </ng-container>
+    </select>
+  </div>
+  <button class="submit" (click)="submit()">Submit</button>
+</div>

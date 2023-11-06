@@ -1,0 +1,52 @@
+<div class="login-page">
+  <form class="login-form" [formGroup]="loginForm" (ngSubmit)="login()">
+    <div class="login-form-div">
+      <div class="email-password-inputs-container">
+        <img
+          class="logo-kqc-img"
+          draggable="false"
+          [src]="'assets/images/login.png'"
+          alt=""
+        />
+        <p class="welcome">Welcome Back</p>
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          class="email-input"
+          formControlName="email"
+          [class.error]="showValidationMessage"
+          (input)="showValidationMessage = false"
+        />
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          class="password-input"
+          formControlName="password"
+          [class.error]="showValidationMessage"
+          (input)="showValidationMessage = false"
+        />
+        <div class="wrong-credentials-forgot-password">
+          <div *ngIf="showValidationMessage" class="validation-message">
+            <img
+              draggable="false"
+              class="exclamation-icon"
+              src="assets/images/exclamation.svg"
+              alt=""
+            />
+            <p class="text-message">Wrong Credentials</p>
+          </div>
+          <!-- <small class="forgot-password">
+              {{ "loginPage.forgotPassword" | translate }}
+            </small> -->
+        </div>
+        <div class="sign-in-container">
+          <button class="sign-in" type="submit" [disabled]="loginForm.invalid">
+            Sign In
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
