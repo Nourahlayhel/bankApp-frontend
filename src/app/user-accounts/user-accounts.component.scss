@@ -1,81 +1,72 @@
-.accounts-wrapper{
-    background-color:#35363a;
-    color:white;
-    height: 100%;
-    font-family: "font-regular", "font-regular-arabic", sans-serif;
+.accounts-wrapper {
+  background-color: #f7fafc;
+  color: white;
+  height: 100vh;
+  font-family: "font-regular", "font-regular-arabic", sans-serif;
+  max-height: 100vh;
+  overflow: scroll;
 }
-.mask-add{
-    mask: url("/assets/images/add-account.svg");
-    display: inline-block;
-    mask-size: contain;
-    mask-repeat: no-repeat;
-    mask-position: center;
-    height: 20px;
-    width: 20px;
-    background-color: black ;
+.mask-add {
+  mask: url("/assets/images/add-account.svg");
+  display: inline-block;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  height: 20px;
+  width: 20px;
+  background-color: black;
 }
-.avatar{
-    mask: url("/assets/images/avatar.svg");
-    display: inline-block;
-    mask-size: contain;
-    mask-repeat: no-repeat;
-    mask-position: center;
-    height: 20px;
-    width: 20px;
-    // background-color: white ;
-}
-.create-button{
-    display: flex;
-    align-items: center;
+.avatar {
+  mask: url("/assets/images/avatar.svg");
+  display: inline-block;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  height: 20px;
+  width: 20px;
+  background-color: white;
 }
 
-.create{
-    width: 75px;
-    height: 30px;
-    border-radius: 5px;
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #202124;
+  height: 100px;
 }
 
-.header{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: white;
-    background-color:#202124;
-    height: 100px;
+.accounts {
+  justify-content: center;
+  display: table;
+  position: relative;
 }
 
-.creation-form{
-    position: absolute;
-    z-index: 1;
-    background-color: lightgray;
-    top: 69px;
-    inset-inline-end: 116px;
-    border: 1px solid;
-    height: 180px;
-    color: black;
-    width: 320px;
-    font-size: 16px;
-    display: grid;
-}
-.fill{
-    display: flex;
-    align-items: center;
-    gap:5px;
-    padding-inline:7px
-
+.initial-credit {
+  height: 25px;
+  border-radius: 10px;
 }
 
-
-.accounts{
-justify-content: center;
-display: table;
-position: relative;
-    height: 100vh;
-
-
+h1 {
+  color: #202124;
+}
+.creation-form {
+  position: relative;
 }
 
-.initial-credit{
-    height: 25px;
-    border-radius: 10px;
+.line-chart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // height: 100vh;
+}
+
+.chart-container {
+  border: 1px solid #000;
+}
+
+.details-wrapper {
+}
+.avatar-button {
+  background-color: transparent;
+  border: none;
 }

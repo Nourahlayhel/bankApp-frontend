@@ -4,7 +4,7 @@ export class AccountDto {
   accountId: number = 0;
   balance: number = 0;
   currencyId: number = 0;
-  currency: string = '';
+  currency?: string = '';
   creationDate: Date = new Date();
   transactions: TransactionDto[] = [];
   user: LoggedInUserDto | null = null;

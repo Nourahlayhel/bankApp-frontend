@@ -8,16 +8,9 @@ import { AuthenticationGuard } from './authentication.guard';
 import { LoginModule } from './login/login/login.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    LoginModule,
-    HttpClientModule,
-  ],
+  declarations: [AppComponent],
+  imports: [BrowserModule, AppRoutingModule, LoginModule, HttpClientModule],
   providers: [AuthenticationGuard],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

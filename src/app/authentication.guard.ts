@@ -20,8 +20,8 @@ export class AuthenticationGuard implements CanActivate, CanLoad {
     if (this.appService.isAuthenticated) {
       return true;
     } else {
-      window.location.replace('/#/login');
-      window.location.reload();
+      window.location.replace('/');
+      // window.location.reload();
       return false;
     }
   }

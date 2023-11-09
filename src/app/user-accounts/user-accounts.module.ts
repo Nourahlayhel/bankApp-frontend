@@ -7,6 +7,7 @@ import { UserAccountComponent } from './user-account/user-account.component';
 import { CurrencyDropdownModule } from '../currency-dropdown/currency-dropdown/currency-dropdown.module';
 import { FormsModule } from '@angular/forms';
 import { TransactionsModule } from '../transations/transactions.module';
+import { AccountCreationFormModule } from '../account-creation-form/account-creation-form.module';
 
 const routes: Routes = [
   {
@@ -24,6 +25,7 @@ const routes: Routes = [
     CurrencyDropdownModule,
     FormsModule,
     TransactionsModule,
+    AccountCreationFormModule,
     RouterModule.forChild(routes),
   ],
   exports: [UserAccountsComponent],

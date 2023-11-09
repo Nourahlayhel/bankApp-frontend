@@ -1,0 +1,19 @@
+<div class="creation-form bg-account">
+  <h3>Create new account</h3>
+  <div class="fill">
+    <label>
+      <span> Initial Credit: </span>
+    </label>
+    <input type="number" class="initial-credit" [(ngModel)]="initialCredit" />
+  </div>
+  <div class="fill">
+    <label> Currency: </label>
+    <app-currency-dropdown
+      [currencySource]="appService.currencySource"
+      (onSelect)="selectCurrency($event)"
+    ></app-currency-dropdown>
+  </div>
+  <div class="fill">
+    <button class="create" (click)="onAccountCreation()">Create</button>
+  </div>
+</div>

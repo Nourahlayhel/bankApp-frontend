@@ -2,53 +2,70 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  color: #35363a;
+  font-size: 16px;
+  font-family: "font-regular", "font-regular-arabic", sans-serif;
+  height: 70px;
+  padding-inline: 25px;
 }
+
+.transaction {
+  display: grid;
+}
+
 .new-transaction-form {
   position: absolute;
-  height: 200px;
   z-index: 1;
-  background-color: #35363a;
   display: grid;
-  width: 280px;
-  color: white;
+  width: 350px;
+  color: #35363a;
   inset-inline-start: 290px;
   padding: 9px;
-  top: 274px;
-  box-shadow: 4px;
+  top: 42px;
+  left: 78%;
+  border-radius: 5px;
+  border: 1px solid #ced4da;
 }
-.new-transaction {
+
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  padding-inline: 10px;
 }
+
 .button-add {
   background-color: transparent;
   border: none;
 }
-.amount {
-  width: 180px;
-}
-.submit {
-  width: 80px;
-}
-.opt {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  height: 70px;
-}
-select {
-  width: 130px;
-  font-size: 16px;
-  border-radius: 10px;
-}
+
 .mask-add {
   mask: url("/assets/images/add-account.svg");
   display: inline-block;
   mask-size: contain;
   mask-repeat: no-repeat;
   mask-position: center;
-  height: 25px;
+  height: 28px;
   width: 28px;
+  background-color: #35363a;
+}
+.mask-transaction {
+  mask: url("/assets/images/transactions-icon.svg");
+  display: inline-block;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  height: 25px;
+  width: 50px;
+  background-color: black;
+}
+.account-operations {
+  width: 50%;
   background-color: white;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: "font-regular", "font-regular-arabic", sans-serif;
+  color: #35363a;
+  box-shadow: 2px white;
 }

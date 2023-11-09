@@ -1,28 +1,34 @@
-<div *ngFor="let t of transactions" class="transaction-wrapper">
-  <span> Made on {{ t.transactionDate | date }}</span>
-  <span> {{ t.transactionType === "Deposit" ? "+" : "-" }} {{ t.amount }}</span>
-</div>
-<div *ngIf="!transactions?.length">No transactions made on this account</div>
-<div class="new-transaction">
-  <span> Add new transaction on account</span>
-  <button class="button-add" (click)="toggleForm()">
-    <span class="mask-add"></span>
-  </button>
-</div>
-<div class="new-transaction-form" *ngIf="showTransactionForm">
-  <div class="opt">
-    <label>Amount</label><input type="number" [min]="0" [(ngModel)]="amount" />
+<div class="account-operations">
+  <div class="header">
+    <h2>Recent Operations</h2>
+    <button class="button-add" (click)="toggleForm()">
+      <span class="mask-add"></span>
+    </button>
+    <div class="new-transaction-form bg-account" *ngIf="showTransactionForm">
+      <app-add-transaction-form
+        *ngIf="transactionTypes"
+        [transactionTypes]="transactionTypes"
+        [accountId]="accountId"
+        [balance]="balance"
+        (onSubmitClick)="addTransaction($event)"
+      ></app-add-transaction-form>
+    </div>
+  </div>
+  <hr />
+  <div *ngFor="let t of transactions" class="transaction-wrapper">
+    <div class="transaction">
+      <span class="mask-transaction"></span>
+      <span
+        >Made on {{ t.transactionDate | date : DateFormat }} at
+        {{ t.transactionDate | date : TimeFormat }}
+      </span>
+    </div>
+    <span>
+      {{ t.transactionType === "Deposit" ? "+" : "-" }} {{ t.amount }}</span
+    >
   </div>
 
-  <div class="opt">
-    <label>Type</label
-    ><select (change)="selectType($event)">
-      <ng-container *ngFor="let t of transactionTypes">
-        <option [value]="t.transactionTypeId" [title]="t.name">
-          {{ t.name }}
-        </option>
-      </ng-container>
-    </select>
-  </div>
-  <button class="submit" (click)="submit()">Submit</button>
+  <div *ngIf="!transactions?.length">No transactions made on this account</div>
+
+  <div class="new-transaction"></div>
 </div>

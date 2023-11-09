@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { AppService } from 'src/app/app.service';
-import { AccountDto, TransactionDto } from '../userAccount';
+import { AccountDto } from '../userAccount';
 
 @Component({
   selector: 'app-user-account',
@@ -9,21 +8,19 @@ import { AccountDto, TransactionDto } from '../userAccount';
 })
 export class UserAccountComponent {
   @Input() account: AccountDto = new AccountDto();
+  @Input() isCreate = false;
+  @Input() selectedAccountId: number | null = 0;
 
-  @Output() onPerformTransaction = new EventEmitter();
-  showTransactions: boolean = false;
+  @Output() onSelectEmitter: EventEmitter<number> = new EventEmitter();
+  @Output() onShowCreationFormClickEmitter = new EventEmitter();
 
-  constructor(public appService: AppService) {}
-  toggleTransactions() {
-    this.showTransactions = !this.showTransactions;
+  constructor() {}
+
+  selectAccount() {
+    this.onSelectEmitter.emit(this.account.accountId);
   }
 
-  performTransaction($event: TransactionDto) {
-    this.account.transactions = [...this.account.transactions, $event];
-    let currentBalance = this.account.balance;
-    this.account.balance =
-      $event.transactionType === 'Withdrawal'
-        ? currentBalance - $event.amount
-        : currentBalance + $event.amount;
+  showCreationForm() {
+    this.onShowCreationFormClickEmitter.emit();
   }
 }

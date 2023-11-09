@@ -19,23 +19,26 @@ export class UserAccountsService {
   get userAccounts() {
     return this.userAccountsSource.value;
   }
+
   set userAccounts(accounts: AccountDto[]) {
     this.userAccountsSource.next(accounts);
   }
 
   getUserAccounts() {
     let userId = this.appService.loggedInUser.userId;
-    this.httpClient
+    return this.httpClient
       .get<AccountDto[]>(this.baseUrl + '/account/' + userId)
-      .pipe(take(1))
-      .subscribe((res: AccountDto[]) => {
-        this.userAccounts = res.map((acc) => {
-          acc.currency = this.appService.currencySource.find(
-            (c: any) => c.id == acc.currencyId
-          ).code;
-          return acc;
-        });
-      });
+      .pipe(
+        take(1),
+        tap((res: AccountDto[]) => {
+          this.userAccounts = res.map((acc) => {
+            acc.currency = this.appService.currencySource.find(
+              (c: any) => c.id == acc.currencyId
+            ).code;
+            return acc;
+          });
+        })
+      );
   }
 
   createAccount(initialCredit: number, currencyId: number) {

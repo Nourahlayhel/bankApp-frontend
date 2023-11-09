@@ -1,0 +1,54 @@
+:host {
+  display: grid;
+}
+
+.amount {
+  width: 180px;
+  border-radius: 5px;
+  margin: 5px;
+  height: 25px;
+}
+
+.submit {
+  width: 80px;
+  height: 35px;
+}
+option {
+  padding: 10px;
+  height: 40px;
+}
+.opt {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.message {
+  color: red;
+}
+
+select {
+  width: 130px;
+  height: 37px;
+  padding: 6px;
+  margin: 24px;
+  font-size: 16px;
+  border-radius: 5px;
+  -moz-appearance: none;
+  background-image: none;
+}
+
+.mask-exclamation {
+  mask: url("/assets/images/exclamation.svg");
+  display: inline-block;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  height: 28px;
+  width: 28px;
+  background-color: red;
+}
+.show-message {
+  display: flex;
+  align-items: center;
+}

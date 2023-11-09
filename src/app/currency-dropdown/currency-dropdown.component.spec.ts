@@ -8,7 +8,7 @@ describe('CurrencyDropdownComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [CurrencyDropdownComponent]
+      declarations: [CurrencyDropdownComponent],
     });
     fixture = TestBed.createComponent(CurrencyDropdownComponent);
     component = fixture.componentInstance;
@@ -17,5 +17,13 @@ describe('CurrencyDropdownComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  describe('selectCurrency', () => {
+    it('should emit selected currency id', () => {
+      spyOn(component.onSelect, 'emit').and.callThrough();
+      component.selectCurrency({ target: { value: 1 } });
+      expect(component.onSelect.emit).toHaveBeenCalledWith(1);
+    });
   });
 });

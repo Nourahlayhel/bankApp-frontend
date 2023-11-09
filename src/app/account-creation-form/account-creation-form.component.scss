@@ -1,0 +1,36 @@
+.create-button {
+  display: flex;
+  align-items: center;
+}
+
+.create {
+  width: 75px;
+  height: 30px;
+  border-radius: 5px;
+}
+.creation-form {
+  position: absolute;
+  z-index: 1;
+  border: 1px solid #ced4da;
+  color: black;
+  width: 350px;
+  font-size: 16px;
+  display: grid;
+  font-size: 16px;
+  font-family: "font-regular", "font-regular-arabic", sans-serif;
+}
+.fill {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding-inline: 7px;
+  height: 65px;
+}
+.initial-credit {
+  height: 25px;
+  border-radius: 10px;
+  margin-left: 7px;
+}
+h3 {
+  padding-inline-start: 3px;
+}

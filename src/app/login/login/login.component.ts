@@ -13,14 +13,10 @@ export class LoginComponent {
     email: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required),
   });
+
   showValidationMessage: boolean = false;
 
-  constructor(private loginService: LoginService) {
-    // this.loginForm = new FormGroup({
-    //   email: new FormControl('', Validators.required),
-    //   password: new FormControl('', Validators.required),
-    // });
-  }
+  constructor(private loginService: LoginService) {}
 
   login() {
     if (this.loginForm?.valid) {
@@ -31,6 +27,9 @@ export class LoginComponent {
           error: (error: any) => {
             if (error) {
               this.showValidationMessage = true;
+              setTimeout(() => {
+                this.showValidationMessage = false;
+              }, 6000);
             }
           },
         });

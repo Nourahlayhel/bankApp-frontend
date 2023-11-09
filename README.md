@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+
 # TransAccount
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.9.
@@ -23,9 +24,34 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 =======
+
 # bankApp-frontend
->>>>>>> 7d0b436 (Initial commit)
+
+> > > > > > > 7d0b436 (Initial commit)
+
+Welcome to BankApp, a simple web application that allows users to manage their bank accounts.
+With BankApp, users can create new bank accounts in either USD or LBP currency, abd perform transactions on them.
+
+# Features
+
+# User Authentication
+
+BankApp provides a secure login system to ensure that only authorized users can access their accounts. Users can only log in with their existing credentials.
+
+# Account Management
+
+Creating a New Account
+Once logged in, users can easily create new bank accounts. They can specify the initial balance in either USD or Lebanese currency or simply create new account with 0 balancr.
+
+# Transaction Management
+
+Making Transactions
+BankApp allows users to add new transactions to their accounts. They can choose between making a deposit or a withdrawal.
+
+Transaction Details
+For each transaction, users can view detailed information, including the transaction type, amount, date, and any relevant notes.
+
+# Currency Options
+
+BankApp supports both USD and Lebanese currency, giving users the flexibility to manage accounts in their preferred currency.

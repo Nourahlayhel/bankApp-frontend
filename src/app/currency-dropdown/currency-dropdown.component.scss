@@ -1,13 +1,16 @@
+:host {
+  width: 20px;
+  margin-left: 7px;
+}
 
-:host{
-    width : 20px
+option {
+  padding: 4px;
 }
-option{
-    padding: 4px;
-}
-select{
-    width: 70px;
-    font-size: 16px;
-    border-radius: 10px;
-    text-decoration: none;
+
+select {
+  width: 70px;
+  font-size: 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  height: 32px;
 }

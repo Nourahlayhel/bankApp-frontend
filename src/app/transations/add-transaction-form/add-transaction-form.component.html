@@ -1,0 +1,33 @@
+<h3>Add new transaction</h3>
+<div>
+  <div class="opt">
+    <label>Amount:</label
+    ><input type="number" class="amount" [min]="0" [(ngModel)]="amount" />
+  </div>
+  <div
+    class="show-message"
+    *ngIf="showEmptyAmountMessage || showWithdrawalMessage"
+  >
+    <span class="mask-exclamation"> </span>
+    <span class="message" *ngIf="showEmptyAmountMessage">
+      Amount cannot be negative or empty
+    </span>
+    <span class="message" *ngIf="showWithdrawalMessage">
+      You don't have enough balance for this operation
+    </span>
+  </div>
+</div>
+
+<div class="opt">
+  <label>Type:</label
+  ><select (change)="selectType($event)">
+    <option
+      *ngFor="let t of transactionTypes"
+      [value]="t.transactionTypeId"
+      [title]="t.name"
+    >
+      {{ t.name }}
+    </option>
+  </select>
+</div>
+<button class="submit" (click)="submit()">Submit</button>

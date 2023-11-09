@@ -1,24 +1,22 @@
-<div class="account-wrapper">
+<div
+  *ngIf="!isCreate"
+  class="account-wrapper bg-account"
+  [class.bg-white]="selectedAccountId === account.accountId"
+  (click)="selectAccount()"
+>
   <div class="account">
     <span class="mask-account"></span>
     <span>Account #{{ account.accountId }}</span>
   </div>
-  <div>
-    <span>Balance {{ account.balance }} {{ account.currency }}</span>
-  </div>
-  <div class="transactions-wrapper">
-    <span> Transactions</span>
-    <button class="expand" (click)="toggleTransactions()">
-      <span class="mask-arrow-down"></span>
-    </button>
-  </div>
-  <app-transations
-    *ngIf="showTransactions"
-    [transactions]="account.transactions"
-    [transactionTypes]="appService.transactionTypes$ | async"
-    [balance]="account.balance"
-    [accountId]="account.accountId"
-    (onSubmitClick)="performTransaction($event)"
+  <span
+    ><b>{{ account.currency }}</b></span
   >
-  </app-transations>
+  <span [style.color]="'#202124'">Total balance </span>
+  <span [style.font-size]="'20px'">{{ account.balance }}</span>
+</div>
+<div *ngIf="isCreate" class="account-wrapper add-account bg-account">
+  <button class="create-button" (click)="showCreationForm()">
+    <span class="create"></span>
+  </button>
+  <ng-content></ng-content>
 </div>
