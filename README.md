@@ -55,3 +55,26 @@ For each transaction, users can view detailed information, including the transac
 # Currency Options
 
 BankApp supports both USD and Lebanese currency, giving users the flexibility to manage accounts in their preferred currency.
+
+# Getting Started
+
+# Prerequisites
+
+To run BankApp locally, ensure you have the following installed:
+
+1. Node.js
+2. Angular CLI
+
+# Installation
+
+1. Clone github repository:
+   git clone https://github.com/Nourahlayhel/bankApp-frontend.git
+
+2. Install dependencies:
+   npm install
+
+3. Set up the environment variables:
+   go to enviroment.ts and change the port to the one your backend app is using
+
+4. Run the application:
+   ng serve
