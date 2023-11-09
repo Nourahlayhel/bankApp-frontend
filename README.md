@@ -20,8 +20,6 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 # bankApp-frontend
 
-> > > > > > > 7d0b436 (Initial commit)
-
 Welcome to BankApp, a simple web application that allows users to manage their bank accounts.
 With BankApp, users can create new bank accounts in either USD or LBP currency, abd perform transactions on them.
 
